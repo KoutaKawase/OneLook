@@ -1,7 +1,9 @@
 package main
 
 import (
+	"embed"
 	"html/template"
+	"io/fs"
 	"log"
 	"net/http"
 	"strings"
@@ -14,6 +16,15 @@ const (
 	maxQueryLength = 100
 )
 
+//go:embed links.json
+var linksJSON []byte
+
+//go:embed templates
+var templatesFS embed.FS
+
+//go:embed static
+var staticFS embed.FS
+
 type PageData struct {
 	Query  string
 	Groups []LinkGroup
@@ -21,7 +32,7 @@ type PageData struct {
 }
 
 func main() {
-	links, warnings, err := loadLinks("links.json")
+	links, warnings, err := loadLinks(linksJSON)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -30,13 +41,18 @@ func main() {
 	}
 	log.Printf("loaded %d search links", len(links))
 
-	pageTemplate, err := template.ParseFiles("templates/index.html")
+	pageTemplate, err := template.ParseFS(templatesFS, "templates/index.html")
 	if err != nil {
 		log.Fatalf("load HTML template: %v", err)
 	}
 
+	staticRoot, err := fs.Sub(staticFS, "static")
+	if err != nil {
+		log.Fatalf("prepare static files: %v", err)
+	}
+
 	mux := http.NewServeMux()
-	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.FS(staticRoot))))
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/" {
 			http.NotFound(w, r)

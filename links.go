@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/url"
-	"os"
 	"strings"
 )
 
@@ -31,20 +30,16 @@ type LinkGroup struct {
 	Links    []DisplayLink
 }
 
-// loadLinks reads and validates the link configuration. Invalid entries are
-// returned as warnings so one bad entry does not disable the other links.
-func loadLinks(path string) ([]SearchLink, []error, error) {
-	data, err := os.ReadFile(path)
-	if err != nil {
-		return nil, nil, fmt.Errorf("read link configuration %q: %w", path, err)
-	}
-
+// loadLinks parses and validates the embedded link configuration. Invalid
+// entries are returned as warnings so one bad entry does not disable the
+// other links.
+func loadLinks(data []byte) ([]SearchLink, []error, error) {
 	var config linkConfig
 	if err := json.Unmarshal(data, &config); err != nil {
-		return nil, nil, fmt.Errorf("parse link configuration %q: %w", path, err)
+		return nil, nil, fmt.Errorf("parse link configuration: %w", err)
 	}
 	if len(config.Links) == 0 {
-		return nil, nil, fmt.Errorf("link configuration %q contains no links", path)
+		return nil, nil, fmt.Errorf("link configuration contains no links")
 	}
 
 	validLinks := make([]SearchLink, 0, len(config.Links))
@@ -57,7 +52,7 @@ func loadLinks(path string) ([]SearchLink, []error, error) {
 		validLinks = append(validLinks, link)
 	}
 	if len(validLinks) == 0 {
-		return nil, warnings, fmt.Errorf("link configuration %q contains no valid links", path)
+		return nil, warnings, fmt.Errorf("link configuration contains no valid links")
 	}
 
 	return validLinks, warnings, nil
