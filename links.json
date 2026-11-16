@@ -1,0 +1,174 @@
+
+{
+  "links": [
+    {
+      "name": "Oxford Learner's Dictionaries",
+      "category": "Dictionaries",
+      "url_template": "https://www.oxfordlearnersdictionaries.com/definition/american_english/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "Cambridge Dictionary",
+      "category": "Dictionaries",
+      "url_template": "https://dictionary.cambridge.org/dictionary/english/{query}",
+      "query_encoding": "path"
+    },       
+    {
+      "name": "Cambridge Learner’s Dictionary",
+      "category": "Dictionaries",
+      "url_template": "https://dictionary.cambridge.org/dictionary/learner-english/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "Cambridge Essential English Dictionary",
+      "category": "Dictionaries",
+      "url_template": "https://dictionary.cambridge.org/dictionary/essential-british-english/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "Cambridge Essential American Dictionary",
+      "category": "Dictionaries",
+      "url_template": "https://dictionary.cambridge.org/dictionary/essential-american-english/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "Collins English Dictionary",
+      "category": "Dictionaries",
+      "url_template": "https://www.collinsdictionary.com/dictionary/english/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "Merriam webster dictionary(simple)",
+      "category": "Dictionaries",
+      "url_template": "https://www.merriam-webster.com/simple/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "Merriam webster student dictionary",
+      "category": "Dictionaries",
+      "url_template": "https://www.merriam-webster.com/dictionary/{query}?ref=kidsdictionary#kidsdictionary",
+      "query_encoding": "path"
+    },
+    {
+      "name": "Wordsmyth Beginner's dictionary",
+      "category": "Dictionaries",
+      "url_template": "https://www.wordsmyth.net/?level=1&ent={query}",
+      "query_encoding": "query"
+    },
+    {
+      "name": "Longman dictionary",
+      "category": "Dictionaries",
+      "url_template": "https://www.ldoceonline.com/dictionary/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "The Britannica Dictionary",
+      "category": "Dictionaries",
+      "url_template": "https://www.britannica.com/dictionary/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "Dictionary.com",
+      "category": "Dictionaries",
+      "url_template": "https://www.dictionary.com/browse/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "wordreference.com",
+      "category": "Dictionaries",
+      "url_template": "https://www.wordreference.com/definition/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "wordnik",
+      "category": "Dictionaries",
+      "url_template": "https://www.wordnik.com/words/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "American Heritage Dictionary",
+      "category": "Dictionaries",
+      "url_template": "https://www.ahdictionary.com/word/search.html?q={query}",
+      "query_encoding": "query"
+    },
+    {
+      "name": "Vocabrary.com",
+      "category": "Dictionaries",
+      "url_template": "https://www.vocabulary.com/dictionary/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "Yourdictionary.com",
+      "category": "Dictionaries",
+      "url_template": "https://www.yourdictionary.com/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "EnglishCollocation.com",
+      "category": "Collocation",
+      "url_template": "http://www.englishcollocation.com/how-to-use/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "Wordreference collocation",
+      "category": "Collocation",
+      "url_template": "https://www.wordreference.com/EnglishCollocations/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "Oxford collocation dictionary",
+      "category": "Collocation",
+      "url_template": "https://www.freecollocation.com/browse/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "ozdic",
+      "category": "Collocation",
+      "url_template": "https://ozdic.com/word/{query}",
+      "query_encoding": "path"
+    },
+    {
+      "name": "SKELL",
+      "category": "Collocation",
+      "url_template": "https://skell.sketchengine.eu/#result?f=wordsketch&lang=en&query={query}",
+      "query_encoding": "query"
+    },
+    {
+      "name": "Just the world",
+      "category": "Collocation",
+      "url_template": "https://www.just-the-word.com/main.pl?word={query}&mode=combinations",
+      "query_encoding": "query"
+    },
+    {
+      "name": "YouGlish",
+      "category": "Pronunciation",
+      "url_template": "https://youglish.com/pronounce/{query}/english",
+      "query_encoding": "path"
+    },
+    {
+      "name": "PlayPhrase",
+      "category": "Pronunciation",
+      "url_template": "https://www.playphrase.me/#/search?q={query}&language=en",
+      "query_encoding": "query"
+    },
+    {
+      "name": "YARN",
+      "category": "Pronunciation",
+      "url_template": "https://getyarn.io/yarn-find?text={query}",
+      "query_encoding": "query"
+    },
+    {
+      "name": "winklingo",
+      "category": "Pronunciation",
+      "url_template": "https://winklingo.com/en?q={query}",
+      "query_encoding": "query"
+    },
+    {
+      "name": "Google Images",
+      "category": "Images",
+      "url_template": "https://www.google.com/search?gl=us&hl=en&sxsrf=AKL5yDhfndVnfaqKEwK8Mc8EVk6irxRHTw:1794820940466&udm=2&q={query}+concept+illustration&biw=1334&bih=816&dpr=2",
+      "query_encoding": "query"
+    }
+  ]
+}
+

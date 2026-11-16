@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Dictionary Search</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <h1>OneLook</h1>
+      <p>Look up a word across dictionaries and language resources.</p>
+    </header>
+
+    <form class="search-form" action="/" method="get">
+      <label class="visually-hidden" for="query">English word or phrase</label>
+      <input
+        id="query"
+        name="q"
+        type="search"
+        value="{{.Query}}"
+        placeholder="Enter a word or phrase"
+        maxlength="100"
+        autocomplete="off"
+        required
+      >
+      <button type="submit">Search</button>
+    </form>
+
+    {{if .Error}}
+      <p class="error" role="alert">{{.Error}}</p>
+    {{else if .Groups}}
+      <section class="results" aria-label="Search results">
+        {{range .Groups}}
+          <section class="category">
+            <h2>{{.Category}}</h2>
+            <ul>
+              {{range .Links}}
+                <li><a href="{{.URL}}" target="_blank" rel="noopener noreferrer">{{.Name}}</a></li>
+              {{end}}
+            </ul>
+          </section>
+        {{end}}
+      </section>
+    {{else}}
+      <p class="empty-state">Enter a word to see matching dictionary and reference links.</p>
+    {{end}}
+  </main>
+</body>
+</html>

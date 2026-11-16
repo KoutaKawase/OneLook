@@ -1,0 +1,169 @@
+:root {
+  color-scheme: dark;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #111318;
+  color: #e8eaf0;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #111318;
+}
+
+.page {
+  width: min(100% - 40px, 720px);
+  margin: 0 auto;
+  padding: 72px 0 64px;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+
+.page-header p,
+.empty-state {
+  margin: 0;
+  color: #9298a5;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.search-form input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid #343945;
+  border-radius: 7px;
+  outline: none;
+  background: #1a1e26;
+  color: #f1f3f7;
+  font: inherit;
+  font-size: 15px;
+}
+
+.search-form input::placeholder {
+  color: #777f8d;
+}
+
+.search-form input:focus {
+  border-color: #8496b5;
+}
+
+.search-form button {
+  min-width: 104px;
+  height: 46px;
+  padding: 0 18px;
+  border: 1px solid #d8deea;
+  border-radius: 7px;
+  background: #d8deea;
+  color: #171b23;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background: #eef1f7;
+}
+
+.empty-state {
+  margin-top: 30px;
+}
+
+.error {
+  margin-top: 20px;
+  color: #f0a0a0;
+  font-size: 14px;
+}
+
+.results {
+  display: grid;
+  gap: 30px;
+  margin-top: 38px;
+}
+
+.category h2 {
+  margin: 0 0 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #2d323d;
+  color: #cbd3e1;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.category ul {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.category a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 5px;
+  color: #aebedb;
+  font-size: 14px;
+  line-height: 1.45;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.category a:hover {
+  background: #1d232d;
+  color: #eef2fa;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 520px) {
+  .page {
+    width: min(100% - 28px, 720px);
+    padding-top: 44px;
+  }
+
+  .search-form {
+    gap: 8px;
+  }
+
+  .search-form button {
+    min-width: 82px;
+    padding: 0 12px;
+  }
+}
